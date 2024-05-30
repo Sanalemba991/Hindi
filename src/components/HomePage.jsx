@@ -1,6 +1,9 @@
 import React from 'react'
 
-function HomePage() {
+function HomePage(props) {
+  const {setAudioStream,setFile}=props
+  
+  
   return (
     <main className="flex-1 p-4 flex flex-col gap-3 sm:gap-4 justify-center text-center">
     <h1 className='font-semibold text-6xl md:text-7xl'> Language <span className='text-blue-400 bold'>Translation</span></h1>
@@ -12,7 +15,10 @@ function HomePage() {
     <i className="fa-solid fa-microphone"></i>
     </button>
     <p className='text-base'> Or  <label className='text-blue-400 cursor-pointer hover:text-blue-600 duration-150'>
-      UpLoad <input className='hidden' type='file' accept='.mp3,.wave'>
+      UpLoad <input onChange={(e=>{
+        const tempFile =e.target.files[0]
+        setFile(tempFile)
+      })} className='hidden' type='file' accept='.mp3,.wave'>
       </input></label> a mp3</p>
       <p className='italic text-slate-500'> Ask Me Anything</p>
      </main>
