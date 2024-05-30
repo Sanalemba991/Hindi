@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import FileDisplay from "./components/FileDisplay";
@@ -12,6 +12,9 @@ export default function App() {
     setFile(null)
     setAudioStream(null)
   }
+  useEffect(()=>{
+    console.log(audioStream)
+  },[audioStream])
   return (
     <div className="flex flex-col p-4 max-w-[1000px] mx-auto w-full">
       <section className="min-h-screen flex flex-col">
