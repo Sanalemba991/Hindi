@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Transcribing() {
+export default function Transcribing(props) {
     const { downloading } = props
 
 
@@ -21,5 +21,3 @@ function Transcribing() {
         </div>
     )
 }
-
-export default Transcribing
